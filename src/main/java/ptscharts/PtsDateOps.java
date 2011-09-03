@@ -19,7 +19,7 @@ public class PtsDateOps {
 
   public static final SimpleDateFormat backwardDateFormat = new SimpleDateFormat("HH:mm:ss MM/dd/yy zzz");
   public static final SimpleDateFormat expiryFormat = new SimpleDateFormat("yyyyMMdd");
-  public static final SimpleDateFormat strFormat = new SimpleDateFormat("MM/dd/yy hh:mm");
+  public static final SimpleDateFormat strFormat = new SimpleDateFormat("MM/dd/yy HH:mm");
   public static final SimpleDateFormat fileFormat = new SimpleDateFormat("MM-dd-yyyy-HHmmss");
   public static final SimpleDateFormat dbFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
   public static final SimpleDateFormat dbShortFormat = new SimpleDateFormat("yyyy-MM-dd");

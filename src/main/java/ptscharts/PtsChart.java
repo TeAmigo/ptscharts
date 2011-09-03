@@ -67,9 +67,9 @@ public class PtsChart extends JFreeChart {
   //SimpleBindings plots = new SimpleBindings();
 
   public static enum plotTypes {
-
     PricePlot, VolumePlot, Indicator1Plot, Indicator2Plot, Indicator3Plot
   };
+
   private EnumMap plots = new EnumMap<plotTypes, XYPlot>(plotTypes.class);
   private Date beginDate, endDate, jumpDate;
   private boolean jumpDateSet = false;
@@ -377,6 +377,11 @@ public class PtsChart extends JFreeChart {
     //getSeriesPaintForLines(); 1/19/11 3:51 PM Testing Color.
   }
 
+  /**
+   * 
+   * @param xIn
+   * @param yIn
+   */
   public void drawLineBetweenPoints(double xIn, double yIn) {
     XYSeriesCollection inSet = new XYSeriesCollection();
     XYSeries xys = new XYSeries("");

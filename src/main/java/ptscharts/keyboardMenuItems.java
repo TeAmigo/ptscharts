@@ -55,7 +55,7 @@ public class PtsMouseKeyboardController {
     int k = e.getKeyCode();
     keys[e.getKeyCode()] = true;
 
-    if (e.isAltDown()) {  
+    if (e.isAltDown()) {
       if (e.getKeyCode() == KeyEvent.VK_A) {
         //System.out.println("Alt A");
         panel.restoreAutoBounds();

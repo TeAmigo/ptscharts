@@ -1,0 +1,28 @@
+Keyboard and Mouse Key Actions
+
+* Handled by keyPressed(KeyEvent e)
+*** With Alt key down:
+***** a - restore Auto Bounds
+***** c - clears the key-typed buffer
+***** e - Removes all lines from chart
+***** m - opens the chart menu
+***** r - Adjusts the top and bottom of chart to fit
+***** t - pops open the Trade Window
+
+* Handled by keyReleased(KeyEvent e)
+*** Left or Right arrow keys - move chart left of right (earlier or later)
+*** Up or Down arrow keys - move chart up or down (greater or lessor price range)
+
+* Handled by keyTyped(KeyEvent e)
+*** a - if held while "t" is typed, adds space to top, with "b" held, adds space to bottom
+*** d - move chart lower, whole price range moves down
+*** h - moves chart higher, whole chart range moves up
+*** j - jump the number of bars set in jumpBars
+*** n - narrow candles
+*** r - if held while "t" is typed, removes space to top, with "b" held, removes space to bottom
+*** w - widen candles
+* With Control Key down (still in keyTyped):
+*** j - a jump like j without Ctrl, but also resets the end date properly
+*** s - save the user drawn lines for later restore
+
+* Mouse Clicks - 

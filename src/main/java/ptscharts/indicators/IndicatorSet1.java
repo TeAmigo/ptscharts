@@ -17,13 +17,24 @@ import ptscharts.PtsSymbolInfos;
 public class IndicatorSet1 {
 
 public static PtsChart run(PtsChartFactory factory, String symbol, String beginDate, String endDate, int period) {
-    // AUD CAD DX  ES EUR GBP JPY ZB ZF ZN
     PtsChart chartind = factory.createPtsChart(symbol, beginDate, endDate, period);
     IndicatorGroup indGroup = new IndicatorGroup(chartind);
     int cnt = chartind.getPricePlotDatasetCount();
 
+
+    ChartIndicator ci20 = new ChartIndicator(indGroup, IndicatorType.SMA, PtsChart.plotTypes.PricePlot);
+    ci20.setOptInTimePeriod(20);
+    ci20.setLineColor(Color.RED);
+    ci20.setupRenderer();
+     
+    ChartIndicator ci70 = new ChartIndicator(indGroup, IndicatorType.SMA, PtsChart.plotTypes.PricePlot);
+    ci70.setOptInTimePeriod(70);
+    ci70.setLineColor(Color.GREEN);
+    ci70.setupRenderer();
+    
+    
+    
     ChartIndicator cci = new ChartIndicator(indGroup, IndicatorType.CCI, PtsChart.plotTypes.Indicator2Plot);
-    //ad.setPeriod(50);
     cci.setOptInTimePeriod(14);
     cci.setupRangeAxis("CCI");
     cci.setLineColor(Color.BLUE);
@@ -31,20 +42,8 @@ public static PtsChart run(PtsChartFactory factory, String symbol, String beginD
     cci.addHorizontalLine(-100, Color.red, "-100", 1.5);
     cci.setupRenderer();
 
-    ChartIndicator ci20 = new ChartIndicator(indGroup, IndicatorType.SMA, PtsChart.plotTypes.PricePlot);
-    ci20.setOptInTimePeriod(20);
-    ci20.setLineColor(Color.RED);
-    ci20.setupRenderer();
-    //ci20.addHorizontalLine(100000, Color.red, "100,000");
-
-//    ChartIndicator ci50 = new ChartIndicator(indGroup, IndicatorType.SMA, PtsChart.plotTypes.PricePlot);
-//    ci50.setPeriod(50);
-//    ci50.setLineColor(Color.BLUE);
-//    ci50.setupRenderer();
-
 
     ChartIndicator adosc = new ChartIndicator(indGroup, IndicatorType.ADOSC, PtsChart.plotTypes.Indicator3Plot);
-    //ad.setPeriod(50);
     adosc.setupRangeAxis("ADOSC");
     adosc.setLineColor(Color.BLACK);
     adosc.setOptInFastPeriod(3);
@@ -52,10 +51,6 @@ public static PtsChart run(PtsChartFactory factory, String symbol, String beginD
     adosc.addHorizontalLine(0, Color.red, "0", 1.5);
     adosc.setupRenderer();
 
-    ChartIndicator ci70 = new ChartIndicator(indGroup, IndicatorType.SMA, PtsChart.plotTypes.PricePlot);
-    ci70.setOptInTimePeriod(70);
-    ci70.setLineColor(Color.GREEN);
-    ci70.setupRenderer();
 
     ChartIndicator dx14 = new ChartIndicator(indGroup, IndicatorType.DX, PtsChart.plotTypes.Indicator1Plot);
     dx14.setOptInTimePeriod(14);

@@ -5,6 +5,7 @@
 package ptscharts.indicators;
 
 import com.tictactec.ta.lib.Core;
+import com.tictactec.ta.lib.MAType;
 import com.tictactec.ta.lib.MInteger;
 import com.tictactec.ta.lib.RetCode;
 import java.util.EnumSet;
@@ -178,6 +179,16 @@ public class Indicator {
         retCode = lib.adOsc(startIdx, endIdx, inHigh, inLow, inClose, inVolume,
                 optInFastPeriod, optInSlowPeriod, outBegIdx, outNbElement, output);
         break;
+      case BBANDS:
+        retCode = lib.bbands(startIdx, endIdx, inOpen, //Should be the avg of hi, lo, close
+                optInTimePeriod, // usually 20
+                optInTimePeriod, //optInNbDevUp deviations for upper bands?
+                optInTimePeriod, // optInNbDevDn deviations for lower bands?
+                MAType.Tema, // Moving average type
+                outBegIdx, outNbElement, 
+                output, //outRealUpperBand
+                output, //outRealMiddleBand
+                output);  //outRealLowerBand
       case CCI:
         retCode = lib.cci(startIdx, endIdx, inHigh, inLow, inClose, optInTimePeriod, outBegIdx, outNbElement, output);
         break;

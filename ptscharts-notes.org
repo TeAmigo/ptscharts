@@ -1,0 +1,19 @@
+PtsCharts notes
+
+* NOTES - <2011-06-18 Sat 13:33> - All prior notes are in /share/notes/notes-petrasys
+
+* TODO - <2011-08-01 Mon 12:58> - Need a viewable menu of key and mouse bindings,
+*** See /share/JavaDev/teamigo/ptscharts/src/main/java/ptscharts/keyboardAndMouse.org, 
+
+
+* TODO - <2011-06-18 Sat 13:33> - Persist the chart markup, indicator lines and buy and sell lines, including stops and profit exit, so they can be loaded in the same chart on restart
+*** TODO - <2011-07-10 Sun 13:10> - PERSIST HAND DRAWN LINES
+***** see ArrayList<Integer> priceSeriesLines in /share/JavaDev/teamigo/ptscharts/src/main/java/ptscharts/PtsChart.java, thats where the lines are stored, they are specific to a certain plot, so far always the PricePlot, this is for the non vertical or horizontal lines,
+***** hand drawn lines, see drawLineBetweenPoints() in PtsChart class
+
+*** TODO - <2011-07-05 Tue 14:05> - PERSIST the Vertical,Horizontal, Buy, Sell, ProfitExit, and LossExit lines
+*** IN-PROGRESS - <2011-07-05 Tue 18:28> - setupSellTrade(), setupBuyTrade(), setupHorizontalCrosshair(), setupVerticalCrosshair(), all of these are in /share/JavaDev/teamigo/ptscharts/src/main/java/ptscharts/PtsMouseKeyboardController.java, in chartMouseClicked(), lines around 292 on, also might need to consider setupStopLossCrosshair() and setupProfitStopCrosshair() !line 284 same function
+*** LEFT-OFF-HERE - <2011-07-05 Tue 19:16> - PtsCrosshair should be used instead of Crosshair pretty much, looks like I just need to iterate over the PTSCrosshairs, and grab there value and possible values of 4 flags, stopLoss, BuySell, etc, see booleans line 84-7 in /share/JavaDev/teamigo/ptscharts/src/main/java/ptscharts/PtsCrosshair.java, also need to save whether it's a vertical or horizontal hair, debuggin at line 253 in file:///share/JavaDev/teamigo/ptscharts/src/main/java/ptscharts/PtsMouseKeyboardController.java,
+***** Range hairs are horizontal, Domain are Vertical -
+
+* TODO - <2011-07-05 Tue 14:15> - Clean up the keybindings/mouse stuff, at least a help screen for me!,
